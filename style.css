@@ -1,0 +1,145 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('background/back.jpg'); /* Replace with your actual image */
+  background-size: cover;               /* Ensures image covers entire screen */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;         /* Optional: keeps background fixed on scroll */
+  color: #233d4d;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark {
+  background-image: url('background/background_quiz\ dark.jpg'); /* Replace with your dark theme image */
+  color: #f5f5f5;
+}
+
+
+
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+}
+
+.dark .container {
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black background for dark mode */
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#choices button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  background: #eee;
+  border: none;
+  border-radius: 4px;
+}
+
+#choices button:hover {
+  background-color: #ccc;
+}
+
+.hide {
+  display: none;
+}
+
+.score-box {
+  text-align: center;
+}
+
+.nav-buttons {
+  margin-top: 1rem;
+}
+
+/* transition for dark mode */
+
+button {
+  transition: background 0.3s, ease, transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+
+/* Slide in from left (Next) */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInLeft 0.4s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right (Previous) */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInRight 0.4s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* animation correct and wrong */
+.correct {
+  background-color: #4d774d !important;
+  animation: pulse 0.3s;
+}
+
+.wrong {
+  background-color: #ff7f7f !important;
+  animation: shake 0.3s;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* review box */
+
+.review-box {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.review-item.correct {
+  border-left: #175017;
+}
+
+.review-item.wrong {
+  border-left: #ff7f7f;
+}
